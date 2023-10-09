@@ -1,0 +1,17 @@
+{
+  "name": "vis-call",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc",
+    "format": "prettier . -w"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}
