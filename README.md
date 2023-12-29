@@ -1,3 +1,5 @@
+# Vis Call
+
 Just a fun project to visualize functions in different programming languages.
 String with JS first :) 
 
@@ -19,7 +21,7 @@ function C(bool) {
 }
 ```
 
-# Visual Output
+## Visual Output
 ```
          A [Doc] [Custom Comments]
         / \   \\
@@ -51,7 +53,7 @@ function C(bool) {
   nil  nil
 ```
 
-# Types
+## Types
 ```
 Function Declaration Node ->> 
     Name [string]
