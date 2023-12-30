@@ -55,17 +55,22 @@ function C(bool) {
 
 ## Types
 ```
-Function Declaration Node ->> 
-    Name [string]
+Function Declaration ->> 
+    Function Signature [Function Signature]
     Probable Call Expressions [List<Call Expressions>]
     Definite Call Expressions [List<Call Expressions>]
     Doc string [Optional<string>]
     * Custom comments -> can be added by users
 
-
-Call Expression Node ->> 
+Function Signature ->>
     Name [string]
+    Parameters [List<string>]
+
+Call Expression ->> 
+    Function Signature [Function Signature]
+    Function Declaration [Function Declaration]
     * Custom comments -> can be added by users
     ? some information about call site
+
 ```
 
