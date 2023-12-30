@@ -1,0 +1,15 @@
+{
+  "name": "vis-call",
+  "version": "1.0.0",
+  "description": "Just a fun project to visualize functions in different programming languages. String with JS first :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/parser": "^7.0.0"
+  }
+}
