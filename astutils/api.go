@@ -8,7 +8,7 @@ import (
 
 func GenerateJsAst(filepath string) (string, error) {
 	// run node.js with the @babel/parser package to generate ast
-	cmd := exec.Command("node", "scripts/js-ast.js", filepath)
+	cmd := exec.Command("node", "astutils/js/ast.js", filepath)
 	var output bytes.Buffer
 	cmd.Stdout = &output
 	cmd.Stderr = os.Stderr
