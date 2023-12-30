@@ -9,7 +9,7 @@ BINARY_NAME=viscall
 %:
 	@:
 
-install: packages.json
+install:
 	npm install
 
 build:
