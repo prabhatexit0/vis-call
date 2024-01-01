@@ -3,10 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"os"
 	"github.com/prabhatexit0/vis-call/astutils"
+	"os"
 )
-
 
 func main() {
 	if len(os.Args) != 2 {

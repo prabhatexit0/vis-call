@@ -1,4 +1,7 @@
-.PHONY: all build run clean 
+.PHONY: all build run clean
+
+# Silents all the targets
+.SILENT:
 
 # Name of the executable
 BINARY_NAME=viscall
@@ -9,9 +12,24 @@ BINARY_NAME=viscall
 %:
 	@:
 
+install:
+	npm install
+
 build:
-	go build -o bin/viscall .
+	go build -o bin/$(BINARY_NAME) .
 
-run: npm i
-	go run . $(filter-out $@,$(MAKECMDGOALS))
+run: build
+	go run . $(filter-out $@, $(MAKECMDGOALS))
 
+clean:
+	rm -rf node_modules bin
+
+dbuild:
+	docker build . -t $(BINARY_NAME)
+
+drun:
+	docker run -it -v "$(pwd)/:/app/" --name $(BINARY_NAME) $(filter-out $@, $(MAKECMDGOALS))
+
+dclean:
+	docker rm $(BINARY_NAME)
+	docker rmi $(BINARY_NAME)

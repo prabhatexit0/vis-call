@@ -9,7 +9,7 @@ WORKDIR /app
 # Copy the source code into the container
 COPY . .
 
-RUN echo Installing Node dependencies
+# Building dependencies
 RUN npm i
 
 # Build the Go application
