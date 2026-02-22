@@ -90,7 +90,7 @@ func extractFunctions(root *sitter.Node, source []byte) []FuncDecl {
 				if nameNode == nil || valueNode == nil {
 					continue
 				}
-				if valueNode.Type() == "arrow_function" || valueNode.Type() == "function" {
+				if valueNode.Type() == "arrow_function" || valueNode.Type() == "function_expression" {
 					fd := parseFuncExpr(nameNode, valueNode, root, source)
 					funcs = append(funcs, fd)
 				}
