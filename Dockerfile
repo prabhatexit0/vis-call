@@ -1,20 +1,18 @@
-# Use the official Go image as the base image
-FROM golang:1.21-alpine
+FROM golang:1.24-alpine AS builder
 
-RUN apk add --update nodejs npm 
+RUN apk add --no-cache gcc musl-dev
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the source code into the container
+COPY go.mod go.sum ./
+RUN go mod download
+
 COPY . .
 
-RUN echo Installing Node dependencies
-RUN npm i
-
-# Build the Go application
 RUN go build -o viscall .
 
-# Command to run the application
-CMD ["./viscall"]
+FROM alpine:latest
 
+COPY --from=builder /app/viscall /usr/local/bin/viscall
+
+ENTRYPOINT ["viscall"]
